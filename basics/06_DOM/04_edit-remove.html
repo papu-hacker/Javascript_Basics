@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
+</head>
+
+<body style="background-color: #131314; color: white;">
+    <ul class="langs">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    // function addLang(langName) {
+    //     let li = document.createElement('li');
+    //     li.innerHTML = `${langName}`
+    //     document.querySelector('.langs').appendChild(li)
+    // }
+    // addLang('python')
+    // // addLang('java')
+    // // addLang('typescript')
+
+    function addLang(langName) { // optimized way to append
+        let li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.langs').appendChild(li)
+    }; addLang('golang'); addLang('rust')
+
+    // edit
+    let test = document.querySelector("li:nth-child(2)")
+    // console.log(test);
+    // test.innerHTML = "cpp"
+    let newway = document.createElement("li")
+    newway.innerText = 'jsx'
+    test.replaceWith(newway)
+
+    // test.outerHTML = '<li> tsx </li>'
+
+    // let del = document.querySelector('li:nth-child(3)') // this was better way
+    // del.remove()
+    // test.remove()
+
+</script>
+
+</html>

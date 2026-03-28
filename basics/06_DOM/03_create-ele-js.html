@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
+</head>
+
+<body style="background-color: #131313; color: #FDF9FA;">
+
+    <div>
+        <div>hehehe huhuhu</div>
+        <div>hehehe huhuhu</div>
+        <div>hehehe huhuhu</div>
+        <div>hehehe huhuhu</div>
+    </div>
+
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = 'main'
+    div.id = Math.round(Math.random() * 5000 + 1)
+    div.style.color = '#fff'
+    div.innerHTML = '<h1> hehehe </h1>'
+
+    document.body.appendChild(div)
+
+</script>
+
+</html>

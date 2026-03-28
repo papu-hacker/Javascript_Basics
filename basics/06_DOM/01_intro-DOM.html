@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM testing</title>
+    <style>
+        .bg-black{
+            background-color: rgb(64, 64, 64);
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div>
+        <h1 id="title">Learning DOM js, react, express</h1>
+        <p>sit amet consectetur adipisicing elit. Reprehenderit consequuntur odit non neque iure, sequi exercitationem alias expedita eveniet? Ad!</p>
+
+        <ul>
+            <li class="my-list">ek</li>
+            <li class="my-list">do</li>
+            <li class="my-list">tin</li>
+            <li class="my-list">char</li>
+            <li class="my-list">pach</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+<!-- 
+# 1. Select the HTML element you want to modify
+const element = document.getElementById("existingId"); 
+# Or use querySelector, getElementsByClassName, etc. to get a reference to the element
+
+# 2. Assign a new ID value directly to the 'id' property
+element.id = "newUniqueId"; //
+
+----------------------------------
+# 1. Select the HTML element
+const element = document.querySelector("p"); // Selects the first <p> tag
+
+# 2. Use setAttribute() to assign the 'id'
+element.setAttribute("id", "myParagraph"); //
+
+----------------------------------
+# 1. Create a new element
+const newDiv = document.createElement("div"); //
+
+# 2. Assign the ID
+newDiv.id = "dynamicDiv"; //
+
+# 3. Append the element to the DOM (e.g., to the body)
+document.body.appendChild(newDiv);
+
+---------------from nodelist to array------------------
+const nodeList = document.querySelectorAll('div');
+const array = [...nodeList];
+---
+const nodeList = document.querySelectorAll('div');
+const array = Array.from(nodeList);
+
+-->
