@@ -1,24 +1,34 @@
 let ranColor = function () {
-    const hex = '0123456789ABCDEF';
+    const hex = '0123456789abcdef';
     let color = '#';
     for (let i = 0; i < 6; i++) {
-        color += hex[Math.floor(Math.random() * 16)]
+        color += hex[Math.floor(Math.random() * 16)];
     }
     return color;
 };
 
-// console.log(ranColor());
+console.log(ranColor());
 
-// let body = document.getElementsByTagName('body')
+let inter_id;
 
 const changeBodyColor = function () {
-    // body.style.backgroundColor = ranColor()
-    document.body.style.backgroundColor = ranColor();
-}
+    if (!inter_id) {
+        inter_id = setInterval(() => {
+            chbgcolor()
+        }, 1000);
+    }
+
+    function chbgcolor() {
+        document.body.style.backgroundColor = ranColor();
+    }
+};
+
 const changeBodyColorStop = function () {
-    // body.style.backgroundColor = ranColor()
-    // document.body.style.backgroundColor = ranColor();
+    clearInterval(inter_id);
+    inter_id = null;
 }
 
-let start = document.querySelector('#start').addEventListener('click', changeBodyColor)
-let stopChanging = document.querySelector('#start').addEventListener('click', changeBodyColorStop)
+let start = document.querySelector('#start').addEventListener('click', changeBodyColor);
+
+let stopChanging = document.querySelector('#stop').addEventListener('click', changeBodyColorStop);
+
