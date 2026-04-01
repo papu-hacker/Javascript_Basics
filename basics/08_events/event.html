@@ -23,7 +23,7 @@
             <li><img width="200px" id="owl"
                     src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
                     alt=""></li>
-            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+            <li><a style="color: aliceblue;" href="https://duckduckgo.com" id="ddg">duckduckgo</a></li>
         </ul>
     </div>
 </body>
@@ -31,10 +31,36 @@
     // document.getElementById('owl').onclick = function () {
     //     alert(1)
     // }
+    // document.getElementById('owl').addEventListener('click', function (e) {
+    //     // alert(1)
+    //     console.log(e);
+    // }, false)
+    
+    // type, timestamp, defaultprevented
+    // target, toElement, scrElement, currentTarget
+    // clientX, clientY, shiftKey, keyCode
 
-    document.getElementById('owl').addEventListener('click', function () {
-        alert(1)
-    }, false)
+    // document.getElementById('images').addEventListener('click', function (e) {
+    //     console.log('click inside ul');
+    // }, true) // if it's true goes up to down else from down to up
+
+    // document.getElementById('owl').addEventListener('click', function (e) {
+    //     console.log('click owl');
+    //     e.stopPropagation() // this stops bubbling
+    // }, true) //bubbling: agar ye true hua to pele ul print hoga fir owl print hoga
+
+    // document.getElementById('ddg').addEventListener('click', function (e) {
+    //     e.preventDefault()
+    //     console.log('clicked');
+    // }, false)
+
+    document.querySelector('#images').addEventListener('click', function (e) {
+        let removeImg = e.target.parentNode
+        if (e.target.tagName === 'IMG') {
+            removeImg.remove()
+        }
+    })
 
 </script>
+
 </html>

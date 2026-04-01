@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
+</head>
+
+<body>
+    <h1>hehe</h1>
+    <button id="start">Start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+
+    // let test = function () {
+    //     console.log('hehe');
+    // }
+    // delay ke liye // yaha pr func bhi bula sakte he
+    // setTimeout(test, 1000)
+    // setTimeout(function () {
+    //     console.log('hehe');
+    // }, 1000)
+
+    // let changeText = function () {
+    //     document.querySelector('h1').innerHTML = "Best Js Course"
+    // }; const checkMe = setTimeout(changeText, 2000)
+    // document.querySelector('#stop').addEventListener('click', function () {
+    //     stopMe = clearInterval(checkMe)
+    // })
+    
+    const start_num = setInterval(function () {
+        console.log(Math.random());
+    }, 1000); // clearInterval(start_num);
+    
+    const startLoop = document.querySelector("#start").addEventListener('click', function () {
+        start_num
+    })
+    
+    const stopLoop = document.querySelector("#stop").addEventListener('click', function () {
+        clearInterval(start_num);
+    })
+
+</script>
+
+</html>
