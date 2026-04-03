@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #212121;">
+    <h1>API Testing</h1>
+</body>
+
+<script>
+    let url = 'https://api.restful-api.dev/objects/7'
+    url = 'https://api.github.com/users/hiteshchoudhary'
+    const ajax = new XMLHttpRequest();
+    ajax.open('GET', url)
+    ajax.onreadystatechange = function () {
+        console.log(ajax.readyState);
+
+        if (ajax.readyState === 4) {
+            let data = JSON.parse(this.responseText)
+            // console.log(data);
+            let card = document.createElement('div');
+
+            card.innerHTML = ` <div class="card">
+            <img src="${data.avatar_url}" alt="Avatar" style="width:40%">
+            <div class="container">
+            <h2><b>${data.login}</b></h2>
+            <h3><b>Follower: ${data.followers}</b></h3>
+            <p>${data.bio}</p>
+            </div>
+            </div>`
+            document.body.appendChild(card);
+        }
+    }; ajax.send()
+</script>
+
+</html>
